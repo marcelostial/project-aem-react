@@ -1,0 +1,38 @@
+#clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+#hour-style {
+  margin: 0;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 144px;
+  line-height: 216px;
+  text-align: center;
+
+  /* Secundária */
+
+  color: #222222;
+}
+
+#today-style {
+  position: absolute;
+  top: 78%;
+  margin: 0;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  /* identical to box height */
+
+  text-align: center;
+
+  /* Secundária */
+
+  color: #222222;
+}
