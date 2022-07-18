@@ -1,24 +1,33 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { MapTo } from "@adobe/aem-react-editable-components";
 import user from "../../assets/user.png";
 import lock from "../../assets/lock.png";
-import "./index.css";
 import { useHistory } from "react-router-dom";
+import "./index.css";
 
 const LoginContainer = ({ id }) => {
   const nav = useHistory();
-  const [valPass, setValPass] = useState();
-  const [valUser, setValUser] = useState();
-  const [errorModel, setErrorModel] = useState(null);
 
-  
-  function handleSubimit(event, valPass, valUser) {
+  const [valPass, setValPass] = React.useState();
+  const [valUser, setValUser] = React.useState();
+  const [errorModel, setErrorModel] = React.useState(null);
+  const [errorStatus, setErrorStatus] = React.useState(null);
+
+  function handleSubimit(event) {
     event.preventDefault();
-    if (valPass.length === "admin" && valUser.length === "admin") {
-      nav("/content/reactapp/us/en/home1.html");
+
+    const validateValue = { valPass, valUser };
+
+    if (
+      validateValue.valPass === "admin" &&
+      validateValue.valUser === "admin"
+    ) {
+      nav.push("/content/reactapp/us/en/home1.html");
       setErrorModel(false);
+      setErrorStatus(null)
     } else {
       setErrorModel(true);
+      setErrorStatus("border-error")
     }
   }
 
@@ -30,7 +39,7 @@ const LoginContainer = ({ id }) => {
           placeholder="Usuário"
           value={valUser}
           onChange={(event) => setValUser(event.target.value)}
-
+          className={errorStatus}
         />
         <img src={user} alt="User Icon" />
       </div>
@@ -40,15 +49,14 @@ const LoginContainer = ({ id }) => {
           type="password"
           value={valPass}
           onChange={(event) => setValPass(event.target.value)}
-
+          className={errorStatus}
         />
         <img src={lock} alt="Password Icon" />
       </div>
       <div id="errorModal">
         {errorModel && (
-          <p>
-            Ops, usuário ou senha inválidos.{"\n"}
-            Tente novamente!
+          <p id="errorp">
+            Ops, usuário ou senha inválidos.{"\n"}Tente novamente!
           </p>
         )}
       </div>

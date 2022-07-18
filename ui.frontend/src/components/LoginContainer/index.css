@@ -1,4 +1,6 @@
-
+.border-error {
+  border: #e9b425 solid 1px;
+}
 
 h2 {
   font-family: "Poppins";
@@ -13,8 +15,8 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 75%;
-  gap: 20px;
+  width: 379px;
+  gap: 25px;
   position: relative;
 }
 
@@ -81,21 +83,26 @@ input[type="submit"] {
 
 .inputClass img {
   position: absolute;
-  right: 3%;
+  right: 7%;
   bottom: 38%;
   height: 20px;
   width: 20px;
 }
 
 #errorModal {
+  padding-left: 10%;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
   text-align: center;
-
-  /* Primaria */
-
+  height: 7vh;
+  width: 80%;
   color: #e9b425;
+  white-space: pre-wrap;
+}
+
+#errorp {
+  white-space: pre-wrap;
 }
