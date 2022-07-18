@@ -1,0 +1,44 @@
+#weather {
+  color: #222222;
+  display: flex;
+  flex-direction: column;
+  height: 30%;
+  margin-top: 5%;
+  font-size: 0.9em;
+  align-items: center;
+  justify-content: center;
+}
+
+#climate {
+  display: flex;
+  height: 100%;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+#icon-style {
+  height: 30.78px;
+}
+
+#location-style {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  margin: 0;
+  color: #222222;
+}
+
+#weather-style {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 72px;
+  text-align: center;
+  color: #222222;
+  margin: 0;
+}

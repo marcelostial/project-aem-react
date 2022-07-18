@@ -26,3 +26,23 @@
   display: flex;
   gap: 10x;
 }
+
+.home-header-style{
+  display: flex;
+}
+
+.content-header-style{
+  display: flex;
+  position: relative;
+}
+
+.home-ball-style{
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  max-width: 800px;
+}
+
+.home-ball-styleimg{
+  width: 95%;
+}

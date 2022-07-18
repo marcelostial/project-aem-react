@@ -37,3 +37,64 @@
 p{
   margin: 0 !important;
 }
+
+
+.home-title-style1 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 54px;
+  text-align: right;
+
+  /* Primária */
+
+  color: #c12d18;
+  margin: 0;
+}
+
+.home-text-style1 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  /* identical to box height */
+
+  text-align: right;
+
+  /* Secundária */
+
+  color: #222222;
+  margin: 0;
+}
+
+.home-title-style {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 96px;
+  text-align: right;
+
+  /* Primária */
+
+  color: #c12d18;
+  margin: 0;
+}
+
+.home-text-style {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  /* identical to box height */
+
+  text-align: right;
+
+  /* Secundária */
+
+  color: #222222;
+  margin: 0;
+}

@@ -3,39 +3,54 @@ import { MapTo } from "@adobe/aem-react-editable-components";
 import user from "../../assets/user.png";
 import lock from "../../assets/lock.png";
 import "./index.css";
+import { useHistory } from "react-router-dom";
 
 const LoginContainer = ({ id }) => {
-
+  const nav = useHistory();
   const [valPass, setValPass] = useState();
   const [valUser, setValUser] = useState();
+  const [errorModel, setErrorModel] = useState(null);
 
-   useEffect(()=>{
-    sessionStorage.getItem('user') && setValUser(sessionStorage.getItem('user'))
-    sessionStorage.getItem('pass') && setValPass(sessionStorage.getItem('pass'))
-   })
-
-  function handleSubimit(event) {
+  
+  function handleSubimit(event, valPass, valUser) {
     event.preventDefault();
-    if (valPass === "admin" && valUser === "admin")
-    console.log("logado");
+    if (valPass.length === "admin" && valUser.length === "admin") {
+      nav("/content/reactapp/us/en/home1.html");
+      setErrorModel(false);
+    } else {
+      setErrorModel(true);
+    }
   }
 
   return (
     <form id={id} onSubmit={handleSubimit}>
       <h2>Login</h2>
       <div class="inputClass">
-        <input placeholder="Usuário" value={valUser} onChange={(event)=>sessionStorage.setItem('user', event.target.value)} />
+        <input
+          placeholder="Usuário"
+          value={valUser}
+          onChange={(event) => setValUser(event.target.value)}
+
+        />
         <img src={user} alt="User Icon" />
       </div>
       <div class="inputClass">
-        <input placeholder="Senha" type="password" value={valPass} onChange={(event)=>sessionStorage.setItem('pass', event.target.value)}/>
+        <input
+          placeholder="Senha"
+          type="password"
+          value={valPass}
+          onChange={(event) => setValPass(event.target.value)}
+
+        />
         <img src={lock} alt="Password Icon" />
       </div>
       <div id="errorModal">
-        <p>
-          Ops, usuário ou senha inválidos.
-          Tente novamente!
-        </p>
+        {errorModel && (
+          <p>
+            Ops, usuário ou senha inválidos.{"\n"}
+            Tente novamente!
+          </p>
+        )}
       </div>
       <input value="Continuar" type="submit" />
     </form>

@@ -21,6 +21,8 @@ import "./ExperienceFragment/ExperienceFragment";
 import "./XxXxx";
 import  "./LoginContainer";
 import "./Clock";
+import "./Weather";
+import "./Footer";
 import MeuComponente from "./MeuComponente";
 
 import { MapTo } from "@adobe/aem-react-editable-components";
